@@ -9,6 +9,10 @@ django-gstorage
    :alt: Coverage status
    :target: https://coveralls.io/github/fyndiq/django-gstorage?branch=master
 
+.. image:: https://readthedocs.org/projects/django-gstorage/badge/?version=latest&style=flat
+   :alt: ReadTheDocs
+   :target: https://django-gstorage.readthedocs.io/en/latest/
+
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
    :alt: License MIT
 
