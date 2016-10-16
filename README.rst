@@ -1,6 +1,10 @@
 django-gstorage
 ===============
 
+.. image:: https://img.shields.io/pypi/v/django-gstorage.svg
+   :alt: PyPi page
+   :target: https://pypi.python.org/pypi/django-gstorage
+
 .. image:: https://travis-ci.org/fyndiq/django-gstorage.svg?branch=master
     :alt: Travis CI Status
     :target: https://travis-ci.org/fyndiq/django-gstorage
