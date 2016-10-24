@@ -3,7 +3,7 @@
 Tests for checking the configuration for app has
 the valid checks (gstorage.apps, gstorage.checks)
 """
-from os import environ, path
+from os import environ
 from unittest import TestCase
 
 try:
