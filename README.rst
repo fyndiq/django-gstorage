@@ -5,7 +5,7 @@ django-gstorage
    :alt: PyPi page
    :target: https://pypi.python.org/pypi/django-gstorage
 
-.. image:: https://travis-ci.org/caulagi/django-gstorage.svg?branch=master
+.. image:: https://travis-ci.org/fyndiq/django-gstorage.svg?branch=master
     :alt: Travis CI Status
     :target: https://travis-ci.org/fyndiq/django-gstorage
 
