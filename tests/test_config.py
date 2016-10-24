@@ -22,8 +22,9 @@ class TestStorageConfig(TestCase):
     def test_key_error(self):
         """Test that app check throws an error when required setting is missing"""
         errors = check_gstorage_params()
-        assert len(errors) == 1
+        assert len(errors) >= 1
         assert errors[0].id == 'gstorage.001'
+        assert errors[0].msg.find(key) == 0
 
     def test_key_settings(self):
         """Test that app check has no errors when settings is specified"""
