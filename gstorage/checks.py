@@ -3,6 +3,8 @@
 Check that the module is registered with required settings
 """
 
+from os import environ
+
 from django.conf import settings
 from django.core import checks
 
@@ -22,7 +24,11 @@ def get_config(key):
     try:
         return getattr(settings, key)
     except AttributeError:
-        None
+        try:
+            return environ[key]
+        except KeyError:
+            pass
+    return None
 
 
 def check_gstorage_params(**kwargs):
