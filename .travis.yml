@@ -2,5 +2,7 @@ sudo: false
 language: python
 python: 3.5
 install: pip install tox coveralls wheel
-script: tox
+script: tox -e $TOXENV
+env:
+  - TOXENV=$(tox -l)
 after_success: coveralls
