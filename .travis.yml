@@ -4,5 +4,12 @@ python: 3.5
 install: pip install tox coveralls wheel
 script: tox -e $TOXENV
 env:
-  - TOXENV=$(tox -l)
+  - TOXENV=py27-django-110
+  - TOXENV=py35-django-110
+  - TOXENV=py27-django-19
+  - TOXENV=py35-django-19
+  - TOXENV=py27-django-18
+  - TOXENV=py35-django-18
+  - TOXENV=py27-django-17
+  - TOXENV=py27-lint
 after_success: coveralls
