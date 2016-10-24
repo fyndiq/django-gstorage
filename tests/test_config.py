@@ -1,12 +1,21 @@
 # -*- coding: utf-8 -*-
 """
-Tests for checking the configuration for app
+Tests for checking the configuration for app has
+the valid checks (gstorage.apps, gstorage.checks)
 """
-from os import environ
+from os import environ, path
 from unittest import TestCase
+
+try:
+    # python >= 3.3
+    from unittest.mock import patch
+except ImportError:
+    # python < 3.3
+    from mock import patch
 
 from django.conf import settings
 from gstorage.checks import check_gstorage_params, get_config
+from gstorage.apps import GStorageConfig
 
 key = 'GOOGLE_APPLICATION_CREDENTIALS'
 
@@ -41,3 +50,10 @@ class TestStorageConfig(TestCase):
         setattr(settings, key, '/foo')
         environ[key] = '/bar'
         assert get_config(key) == '/foo'
+
+    def test_real_config(self):
+        """Test that instantiating the real config calls the validation methods"""
+        with patch('gstorage.apps.checks.register') as mock_method:
+            app = GStorageConfig.create('gstorage')
+            app.ready()
+            assert mock_method.call_count == 1

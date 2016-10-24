@@ -4,3 +4,4 @@ coverage
 gcloud
 pytest-django
 pytest-cov
+mock
