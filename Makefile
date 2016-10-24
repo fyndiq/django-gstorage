@@ -1,9 +1,7 @@
 .PHONY: test release
 
 test:
-	py.test --traceconfig
+	py.test
 
 release:
 	python setup.py sdist bdist_wheel register upload -s
-
-
