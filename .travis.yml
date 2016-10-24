@@ -2,11 +2,5 @@ sudo: false
 language: python
 python: 3.5
 install: pip install tox coveralls wheel
-script: tox -e $TOXENV
-env:
-  - TOXENV=py27-django-17
-  - TOXENV=py27-django-18
-  - TOXENV=py27-django-19
-  - TOXENV=py35-django-18
-  - TOXENV=py35-django-19
+script: tox
 after_success: coveralls
