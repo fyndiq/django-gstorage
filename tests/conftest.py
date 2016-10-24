@@ -10,8 +10,7 @@ def pytest_configure():
         USE_I18N=True,
         USE_L10N=True,
         INSTALLED_APPS=(
-            'gstorage',
-            'tests',
+            'gstorage.apps.GStorageTestConfig',
         ),
     )
 
