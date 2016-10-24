@@ -45,7 +45,7 @@ def check_gstorage_params(**kwargs):
                     '%s is required' % field,
                     hint=None,
                     obj=module_name,
-                    id='%s.00%s' % (module_name, index+1)  # use 1-based index for errors
+                    id='%s.00%s' % (module_name, index + 1)  # use 1-based index for errors
                 )
             )
     return errors

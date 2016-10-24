@@ -4,8 +4,6 @@ Tests for gstorage.apps.GStorageConfig
 """
 from unittest import TestCase
 
-from django.core.exceptions import ImproperlyConfigured
-
 
 class TestStorageConfig(TestCase):
 
