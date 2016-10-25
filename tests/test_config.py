@@ -8,7 +8,8 @@ from unittest import TestCase
 
 from django.conf import settings
 from gstorage.apps import GStorageConfig
-from gstorage.checks import check_gstorage_params, get_config
+from gstorage.checks import check_gstorage_params
+from gstorage.utils import get_config
 
 try:
     # python >= 3.3
