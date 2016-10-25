@@ -1,7 +1,8 @@
 -e .
-flake8
 coverage
+flake8
 gcloud
-pytest-django
-pytest-cov
+isort
 mock
+pytest-cov
+pytest-django
