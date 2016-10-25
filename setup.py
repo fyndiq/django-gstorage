@@ -3,6 +3,7 @@ django-gstorage
 
 """
 import re
+
 from setuptools import setup
 
 version = ''

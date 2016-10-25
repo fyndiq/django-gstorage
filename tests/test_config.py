@@ -6,6 +6,10 @@ the valid checks (gstorage.apps, gstorage.checks)
 from os import environ
 from unittest import TestCase
 
+from django.conf import settings
+from gstorage.apps import GStorageConfig
+from gstorage.checks import check_gstorage_params, get_config
+
 try:
     # python >= 3.3
     from unittest.mock import patch
@@ -13,9 +17,6 @@ except ImportError:
     # python < 3.3
     from mock import patch
 
-from django.conf import settings
-from gstorage.checks import check_gstorage_params, get_config
-from gstorage.apps import GStorageConfig
 
 key = 'GOOGLE_APPLICATION_CREDENTIALS'
 
