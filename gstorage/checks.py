@@ -8,7 +8,7 @@ from os import environ
 from django.conf import settings
 from django.core import checks
 
-from .constants import REQUIRED_FIELDS
+from .constants import REQUIRED_SETTINGS
 
 
 def get_config(key):
@@ -44,7 +44,7 @@ def check_gstorage_params(**kwargs):
     errors = []
     module_name = 'gstorage'
 
-    for index, field in enumerate(REQUIRED_FIELDS):
+    for index, field in enumerate(REQUIRED_SETTINGS):
         if not get_config(field):
             errors.append(
                 checks.Error(
