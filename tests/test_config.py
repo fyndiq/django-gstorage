@@ -3,21 +3,15 @@
 Tests for checking the configuration for app has
 the valid checks (gstorage.apps, gstorage.checks)
 """
+from mock import patch
 from os import environ
 from unittest import TestCase
 
 from django.conf import settings
+
 from gstorage.apps import GStorageConfig
 from gstorage.checks import check_gstorage_params
 from gstorage.utils import get_config
-
-try:
-    # python >= 3.3
-    from unittest.mock import patch
-except ImportError:
-    # python < 3.3
-    from mock import patch
-
 
 key = 'GOOGLE_APPLICATION_CREDENTIALS'
 

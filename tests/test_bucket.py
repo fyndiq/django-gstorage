@@ -2,8 +2,8 @@
 """
 Tests for gstorage.bucket
 """
-from os import environ
 from mock import patch
+from os import environ
 from unittest import TestCase
 
 from gstorage.bucket import Bucket
@@ -25,11 +25,11 @@ class TestBucket(TestCase):
 
     @patch('gstorage.bucket.Client')
     def test_project(self, mock_client):
-        bucket = Bucket(project='test')
+        Bucket(project='test')
         mock_client.assert_called_once_with(credentials=None, project='test')
 
     @patch('gstorage.bucket.Client')
     def test_credentials(self, mock_client):
         environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/tmp/test'
-        bucket = Bucket()
+        Bucket()
         mock_client.assert_called_once_with(credentials='/tmp/test', project=None)
