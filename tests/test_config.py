@@ -22,6 +22,7 @@ except ImportError:
 key = 'GOOGLE_APPLICATION_CREDENTIALS'
 
 
+@patch('gstorage.checks.REQUIRED_SETTINGS', [key])
 class TestStorageConfig(TestCase):
 
     def setUp(self):
