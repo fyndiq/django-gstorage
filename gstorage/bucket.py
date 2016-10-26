@@ -22,6 +22,3 @@ class Bucket(BaseBucket):
             project = get_config('GCLOUD_PROJECT_NAME')
         client = Client(credentials=credentials, project=project)
         return super(Bucket, self).__init__(client, bucket)
-
-    def sync_dir(self, path):
-        pass
