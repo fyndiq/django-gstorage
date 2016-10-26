@@ -8,20 +8,20 @@ methods to interact with buckets
     >>> bucket.sync_dir('/share/images')
 """
 
-from gcloud.bucket import Bucket as BaseBucket
-from gcloud.client import Client
+from gcloud.storage.bucket import Bucket as BaseBucket
+from gcloud.storage.client import Client
 
 from .utils import get_config
 
 
 class Bucket(BaseBucket):
 
-    def __init__(self, bucket_name=None, project_name=None):
+    def __init__(self, bucket=None, project=None):
         credentials = get_config('GOOGLE_APPLICATION_CREDENTIALS')
-        if not project_name:
-            project_name = get_config('GCLOUD_PROJECT_NAME')
-        client = Client(credentials, project=project_name)
-        return super(BaseBucket, self).__init__(self, client, name=bucket_name)
+        if not project:
+            project = get_config('GCLOUD_PROJECT_NAME')
+        client = Client(credentials=credentials, project=project)
+        return super(Bucket, self).__init__(client, bucket)
 
     def sync_dir(self, path):
         pass
