@@ -20,8 +20,9 @@ class TestBucket(TestCase):
         except KeyError:
             pass
 
+    @patch('gstorage.bucket.GoogleCredentials')
     @patch('gstorage.bucket.Client')
-    def test_call_to_client(self, mock_client):
+    def test_call_to_client(self, mock_client, mock_credentials):
         Bucket.get_or_create('test')
         assert mock_client.called
 
