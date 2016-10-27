@@ -12,8 +12,6 @@ from gcloud.storage.bucket import Bucket as BaseBucket
 from gcloud.storage.client import Client
 from oauth2client.client import GoogleCredentials
 
-from .utils import get_config
-
 
 class Bucket(BaseBucket):
 
