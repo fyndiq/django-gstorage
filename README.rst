@@ -30,6 +30,13 @@ and writing files from Google storage. So there are two goals -
   In this case, we read from Google storage but if that fails, read
   from local filesystem and also update Google storage.
 
+    .. code-block:: python
+
+    >>> from gstorage.bucket import Bucket
+
+    >>> bucket = Bucket.get_default()
+    >>> bucket.copydir('share/storage/2016/10/01')
+
 - Make it simpler to use newer features of Google storage like
   encrypting files with sensitive information
 
