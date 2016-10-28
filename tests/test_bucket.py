@@ -63,13 +63,11 @@ class TestBucket(TestCase):
         with self.assertRaises(OSError):
             bucket.copydir('/root')
 
-    @patch('gstorage.bucket.Blob')
-    def test_copydir_with_children(self, mock_blob):
+    def test_copydir_with_children(self):
         path = tempfile.mkdtemp()
         _, filename = tempfile.mkstemp(dir=path)
-        mock_blob.upload_from_filename = MagicMock()
 
         bucket = Bucket('test')
-        bucket.copydir(path)
-        assert mock_blob.call_count == 1
-        # assert mock_blob.upload_from_filename.assert_called_with(filename)
+        with patch('gstorage.bucket.Blob') as mock_blob:
+            bucket.copydir(path)
+            assert mock_blob.call_count == 1

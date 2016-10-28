@@ -50,15 +50,18 @@ class Bucket(BaseBucket):
         Args:
             path: (string) relative or absolute path to the directory that needs to be copied
         Returns:
-            True if the transfer completed, else False
+            True when transfer is completed
         Raises:
             OSError: path doesn't exist or permission denied
+            ValueError: if the library cannot determine the file size
+            gcloud.exceptions.GCloudError: if upload status gives error response
         """
         if not os.access(path, os.R_OK):
             raise OSError('Permission denied')
         for filename in find_files(path):
             blob = Blob(filename, self)
             blob.upload_from_filename(filename)
+        return True
 
     @classmethod
     def get_default(cls):
