@@ -29,10 +29,10 @@ def get_config(key):
 
 def find_files(path):
     """
-    Return all the files in the given path
+    Return only the files under the given path
 
     Args:
-        path: (string) relative or absolute path to the directory that needs to be copied
+        path: (string) relative or absolute path to the directory
     Returns:
         List of string where each item is a filepath
     """

@@ -16,10 +16,10 @@ class TestBucket(TestCase):
 
     @classmethod
     def setUpClass(cls):
-        try:
+        if 'GOOGLE_APPLICATION_CREDENTIALS' in environ:
             del environ['GOOGLE_APPLICATION_CREDENTIALS']
-        except KeyError:
-            pass
+        if 'GCLOUD_PROJECT' in environ:
+            del environ['GCLOUD_PROJECT']
 
     @patch('gstorage.bucket.GoogleCredentials')
     @patch('gstorage.bucket.Client')
@@ -54,6 +54,7 @@ class TestBucket(TestCase):
     @patch('gstorage.bucket.GoogleCredentials')
     @patch('gstorage.bucket.get_config')
     def test_get_default(self, mock_get_config, mock_credentials):
+        environ['GCLOUD_PROJECT'] = 'test'
         Bucket.get_default()
         assert mock_get_config.called_once_with('GCLOUD_DEFAULT_BUCKET_NAME')
 
