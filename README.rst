@@ -19,27 +19,28 @@ django-gstorage
 
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
    :alt: License MIT
+   :target: https://github.com/fyndiq/django-gstorage/blob/master/LICENSE
 
 
 This library is intended to be a 'plug-and-play' replacement
 for `django.core.files.storage.FileSystemStorage` but reading
 and writing files from Google storage. So there are two goals -
 
-- It should be possible to use this library in projects already
-  using local filesystem but which want to start using Google storage.
-  In this case, we read from Google storage but if that fails, read
-  from local filesystem and also update Google storage.
+It should be possible to use this library in projects already
+using local filesystem but which want to start using Google storage.
+In this case, we read from Google storage but if that fails, read
+from local filesystem and also update Google storage.
 
-    .. code-block:: python
+.. code-block:: python
 
     >>> from gstorage.bucket import Bucket
 
     >>> bucket = Bucket.get_default()
     >>> bucket.copydir('share/storage/2016/10/01')
 
-- Make it simpler to use newer features of Google storage like
-  encrypting files with sensitive information
+Make it simpler to use newer features of Google storage like
+encrypting files with sensitive information
 
-  ::
+.. code-block:: python
 
-	  order_pdf = FileField(encrypted=True)
+	order_pdf = FileField(encrypted=True)
