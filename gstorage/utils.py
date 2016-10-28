@@ -2,7 +2,7 @@
 """
 Helper functions used by other modules
 """
-from os import environ
+import os
 
 from django.conf import settings
 
@@ -21,7 +21,21 @@ def get_config(key):
         return getattr(settings, key)
     except AttributeError:
         try:
-            return environ[key]
+            return os.environ[key]
         except KeyError:
             pass
     return None
+
+
+def find_files(path):
+    """
+    Return all the files in the given path
+
+    Args:
+        path: (string) relative or absolute path to the directory that needs to be copied
+    Returns:
+        List of string where each item is a filepath
+    """
+    return [os.path.join(dirpath, file)
+            for (dirpath, dirs, files) in os.walk(path)
+            for file in files]
