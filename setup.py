@@ -15,7 +15,7 @@ setup(
     name='django-gstorage',
     version=version,
     description='Allow easy integration with Google storage for Django projects',
-    long_description=__doc__,
+    long_description=readme + '\n\n' + history,
     author='Pradip Caulagi',
     author_email='caulagi@gmail.com',
     url='http://github.com/fyndiq/django-gstorage/',
