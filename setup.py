@@ -25,7 +25,7 @@ setup(
     author_email='caulagi@gmail.com',
     url='http://github.com/fyndiq/django-gstorage/',
     packages=['gstorage'],
-    packagke_data={'': ['LICENSE', 'HISTORY.rst']},
+    package_data={'': ['LICENSE', 'HISTORY.rst']},
     include_package_data=True,
     install_requires=[
         'Django',
