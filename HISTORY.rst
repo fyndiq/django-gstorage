@@ -3,6 +3,12 @@
 Release history
 ---------------
 
+0.4.1 (2016-10-30)
+++++++++++++++++++
+
+- Updated docstrings to sphinx style
+- Added documentation for gstorage.utils
+
 0.4.0 (2016-10-30)
 ++++++++++++++++++
 
