@@ -3,8 +3,14 @@
 Release history
 ---------------
 
-0.3.0 (2016-10-28)
+0.4.0 (2016-10-30)
 ++++++++++++++++++
+
+**Features**
+
+- Refactored tests and added seperate test files for each module.
+- Updated documentation on readthedocs.io to include section about
+  bucket.
 
 **Features**
 
