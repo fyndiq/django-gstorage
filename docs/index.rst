@@ -7,3 +7,4 @@ User guide
    :maxdepth: 2
 
    bucket
+   utils
