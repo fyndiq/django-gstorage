@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """
+gstorage.bucket
+~~~~~~~~~~~~~~~
 A thin wrapper around gcloud.bucket with convenience
 methods to interact with buckets
 
