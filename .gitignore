@@ -76,4 +76,4 @@ venv/
 ENV/
 
 # temporary files
-.swp
+*.swp
