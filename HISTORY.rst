@@ -12,6 +12,9 @@ Release history
 - Updated documentation on readthedocs.io to include section about
   bucket.
 
+0.3.0 (2016-10-28)
+++++++++++++++++++
+
 **Features**
 
 - ``gstorage.bucket.Bucket.get_default`` allowing easy access to
