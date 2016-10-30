@@ -1,9 +1,9 @@
 .. include:: ../README.rst
 
-Reference
----------
-
-For further details see the reference documentation
+User guide
+++++++++++
 
 .. toctree::
    :maxdepth: 2
+
+   bucket
