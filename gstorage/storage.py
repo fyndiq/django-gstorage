@@ -4,6 +4,13 @@ gstorage.storage
 ~~~~~~~~~~~~~~~~
 
 Implement the interface expected by :class:`django.core.files.storage.Storage`
+
+    >>> from gstorage.storage import Storage
+    >>> storage = Storage(location='images/2016')
+    >>> with open('car.jpg') as fd:
+    ...     storage.save(fd.name, fd)
+    ...
+    >>> u'images/2016/car.jpg'
 """
 import os
 
@@ -35,7 +42,7 @@ class Storage(BaseStorage):
         a proper File object or any python file-like object, ready to be read
         from the beginning.
         """
-        blob = Blob(name, self._bucket)
+        blob = Blob(os.path.join(self._location, name), self._bucket)
         blob.upload_from_file(content)
         return blob.name
 
