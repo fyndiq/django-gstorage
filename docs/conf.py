@@ -34,8 +34,8 @@ extensions = [
     'sphinx.ext.intersphinx',
 ]
 
-import gstorage
-from gstorage import __version__
+import gstorage # noqa
+from gstorage import __version__ # noqa
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
