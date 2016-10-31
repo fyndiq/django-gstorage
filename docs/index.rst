@@ -8,3 +8,4 @@ User guide
 
    bucket
    utils
+   storage
