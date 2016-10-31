@@ -11,7 +11,7 @@ User guide
    storage
 
 Issues
-------
+++++++
 
 For any bug reports and feature requests, please use the
 `Github issue tracker`_.
