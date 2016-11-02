@@ -12,8 +12,11 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 
+import environ
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+env = environ.Env()
 
 
 # Quick-start development settings - unsuitable for production
@@ -120,3 +123,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Settings relating to django-gstorage
+
+# Use the storage project provided by the library as the default_file_storage
+DEFAULT_FILE_STORAGE = 'gstorage.storage.Storage'
+# Path to the json file with service account credentials
+GOOGLE_APPLICATION_CREDENTIALS = env('GOOGLE_APPLICATION_CREDENTIALS')
+# Project name on google cloud
+GCLOUD_PROJECT_NAME = env('GCLOUD_PROJECT_NAME')
+# The name of the bucket where we should start storing files
+# This bucket should already exist and the service account should have
+# write access.
+GCLOUD_DEFAULT_BUCKET_NAME = env('GCLOUD_DEFAULT_BUCKET_NAME')
