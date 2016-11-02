@@ -7,7 +7,7 @@
     using Google storage for persistence
 """
 
-__version__ = '0.6.0-dev'
+__version__ = '0.6.0'
 __author__ = 'Fyndiq'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2016 Fyndiq AB'
