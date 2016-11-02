@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="posts">
+    {% for post in object_list %}
+      <section class="post">
+        <header class="post-header">
+          <h2 class="post-title">{{ post.title }}</h2>
+          <p class="post-meta">Updated: {{ post.updated }}</p>
+        </header>
+        <div class="post-description">
+          {{ post.content }}
+        </div>
+      </section>
+    {% empty %}
+      <div>There are no posts yet. You can create it from admin</div>
+    {% endfor %}
+  </div>
+{% endblock %}
