@@ -2,8 +2,11 @@
 """
 Tests for gstorage.storage
 """
+import six
 from mock import MagicMock, patch
 from unittest import TestCase
+
+from django.core.files.uploadedfile import InMemoryUploadedFile
 
 from gstorage.storage import Storage
 
@@ -14,19 +17,23 @@ class TestStorage(TestCase):
     @patch('gstorage.storage.Blob')
     def test_save_no_location(self, mock_blob, mock_bucket):
         s = Storage()
-        s._save('test.jpg', None)
+        content = InMemoryUploadedFile(six.StringIO('1'), '', 'test.jpg', 'text/plain', 1, 'utf8')
+        with content:
+            s._save('', content)
         mock_blob.assert_called_once_with('test.jpg', mock_bucket())
 
     @patch('gstorage.storage.Blob')
     def test_save_with_location(self, mock_blob, mock_bucket):
         s = Storage(location='images')
-        s._save('test.jpg', None)
+        content = InMemoryUploadedFile(six.StringIO('1'), '', 'test.jpg', 'text/plain', 1, 'utf8')
+        with content:
+            s._save('', content)
         mock_blob.assert_called_once_with('images/test.jpg', mock_bucket())
 
     @patch('gstorage.storage.Blob')
     def test_open(self, mock_blob, mock_bucket):
         s = Storage()
-        s._save('test.jpg', 'r')
+        s._open('test.jpg', 'r')
         mock_blob.assert_called_once_with('test.jpg', mock_bucket())
 
     @patch('gstorage.storage.Blob')

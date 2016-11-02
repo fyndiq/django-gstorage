@@ -6,3 +6,4 @@ isort
 mock
 pytest-cov
 pytest-django
+six
