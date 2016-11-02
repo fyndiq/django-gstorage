@@ -5,12 +5,13 @@ gstorage.storage
 
 Implement the interface expected by :class:`django.core.files.storage.Storage`
 
+    >>> from django.core.files.uploadfile import TemporaryUploadedFile
     >>> from gstorage.storage import Storage
-    >>> storage = Storage(location='images/2016')
-    >>> with open('car.jpg') as fd:
-    ...     storage.save(fd.name, fd)
+    >>> storage = Storage(location='media/2016')
+    >>> with TemporaryUploadedFile('test', 'text/plain', 1, 'utf8') as content:
+    ...     storage.save('test.txt', content)
     ...
-    >>> u'images/2016/car.jpg'
+    >>> u'media/2016/test'
 """
 import os
 
