@@ -42,9 +42,9 @@ class Storage(BaseStorage):
         a proper File object or any python file-like object, ready to be read
         from the beginning.
         """
-        path = os.path.join(self._location, name) if self._location else name
+        path = os.path.join(self._location, content.name) if self._location else content.name
         blob = Blob(path, self._bucket)
-        blob.upload_from_file(content)
+        blob.upload_from_file(content, size=content.size)
         return blob.name
 
     def get_valid_name(self, name):
