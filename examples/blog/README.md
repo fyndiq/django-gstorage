@@ -3,11 +3,14 @@
 An example project using django-gstorage to save files
 to Google cloud.
 
+![Screen shot of blog](https://storage.googleapis.com/github-screenshots/django-gstorage-blog.png)
+
 ## Setting up Google cloud
 
 * Create a bucket in Google cloud storage - https://console.cloud.google.com/storage/
 * Add the service account as a user to the bucket with
-  write permissions
+  write permissions. You might have to set **default object
+  permissions to public** for the images to appear.
 * Create a .env in the current folder with the required settings. For example
 
 ```
