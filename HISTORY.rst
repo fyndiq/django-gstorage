@@ -3,8 +3,13 @@
 Release history
 ---------------
 
-0.5.1 (2016-11-04)
+0.7.0-dev (2016-11-xx)
 ++++++++++++++++++++++
+
+- Read from local filesystem when file is not present on google cloud
+
+0.5.1 (2016-11-04)
+++++++++++++++++++
 
 - ``gstorage.storage.Storage`` implements the interface expected from
   ``django.core.files.storage.Storage``.  The only **supported interface**
