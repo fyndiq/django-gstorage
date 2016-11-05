@@ -14,7 +14,6 @@ env:
   - TOXENV=py35-django-18
   - TOXENV=py27-django-17
   - TOXENV=py27-lint
-  - TOXENV=sphinx
   - TOXENV=readme
 after_success: coveralls
 notifications:
