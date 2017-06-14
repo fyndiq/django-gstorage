@@ -53,3 +53,9 @@ Using the module to upload some files
 
     >>> bucket = Bucket.get_default()
     >>> bucket.copydir('share/storage/2016/10/01')
+
+Running Tests
++++++++++++++
+
+    >>> pip install -r tests/requirements.txt
+    >>> make test
