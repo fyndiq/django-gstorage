@@ -10,7 +10,7 @@
 __version__ = '0.7.0-dev'
 __author__ = 'Fyndiq'
 __license__ = 'MIT'
-__copyright__ = 'Copyright 2016 Fyndiq AB'
+__copyright__ = 'Copyright 2017 Fyndiq AB'
 
 
 default_app_config = 'gstorage.apps.GStorageConfig'
