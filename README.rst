@@ -21,10 +21,6 @@ django-gstorage
    :alt: License MIT
    :target: https://github.com/fyndiq/django-gstorage/blob/master/LICENSE
 
-.. image:: https://img.shields.io/gitter/room/nwjs/nw.js.svg
-   :alt: Chat on gitter
-   :target: https://gitter.im/django-gstorage/Lobby
-
 
 This library is intended to be a 'plug-and-play' replacement
 for `django.core.files.storage.FileSystemStorage` but reading
@@ -56,6 +52,8 @@ Using the module to upload some files
 
 Running Tests
 +++++++++++++
+
+.. code-block:: console
 
     >>> pip install -r tests/requirements.txt
     >>> make test
