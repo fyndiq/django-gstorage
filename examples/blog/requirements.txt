@@ -1,4 +1,4 @@
 Django==1.9.10
-Pillow==3.4.2
+Pillow==9.0.1
 django-environ==0.4.0
 -e ../..
